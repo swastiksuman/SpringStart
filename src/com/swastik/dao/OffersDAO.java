@@ -18,7 +18,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Component("offersDao")
 public class OffersDAO {
-
+	
+	
 	private NamedParameterJdbcTemplate jdbc;
 	
 	public OffersDAO(){

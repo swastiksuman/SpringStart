@@ -15,28 +15,25 @@ public class OffersController {
 	
 	
 	private OffersService offersService;
-	/*@RequestMapping("/")
-	public ModelAndView showHome(HttpSession session){
-		session.setAttribute("name", "boris");
-		ModelAndView mv = new ModelAndView();
-		Map<String, Object> model = mv.getModel();
-		model.put("name", "Souj");
-		return mv;
-	}*/
 	
-	
-	
-	@RequestMapping("/")
-	public String showHome(Model model){
-		List<Offer> offers = offersService.getCurrent();
-		model.addAttribute("offers", offers);
-		return "home";
-	}
-
-
 	@Autowired
 	public void setOffersService(OffersService offersService) {
 		this.offersService = offersService;
 	}
-}
+
+	@RequestMapping("/offers")
+	public String showOffers(Model model) {
+		
+		List<Offer> offers = offersService.getCurrent();
+		
+		model.addAttribute("offers", offers);
+		
+		return "offers";
+	}
 	
+	@RequestMapping("/createoffer")
+	public String createOffer() {
+	
+		return "createoffer";
+	}
+}

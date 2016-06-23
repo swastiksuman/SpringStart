@@ -11,6 +11,7 @@ import com.swastik.dao.OffersDAO;
 @Service("offersService")
 public class OffersService {
 	
+	
 	private OffersDAO offersDao;
 	
 	@Autowired
