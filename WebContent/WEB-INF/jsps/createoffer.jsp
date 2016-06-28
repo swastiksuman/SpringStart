@@ -8,7 +8,13 @@
 </head>
 <body>
 
-Under construction - create a new offer.
-
+<form method="post" action="${pageContext.request.contextPath}/docreate">
+<table>
+	<tr><td>Name: </td><td><input name="name1" type="text"></td></tr>
+	<tr><td>Email: </td><td><input name="email" type="text"></td></tr>
+	<tr><td>Your Offer: </td><td><textarea name="text" rows="10" cols="50"></textarea></td></tr>
+	<tr><td> </td><td><input value="Create Ad" type="submit"></td></tr>
+</table>
+</form>
 </body>
 </html>
