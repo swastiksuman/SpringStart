@@ -8,10 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<p><a href="/SpringStart/offers">Show Offer</a></p>
 	<p><a href="/SpringStart/createoffer">Add Offer</a>
-	
-
 </body>
 </html>
