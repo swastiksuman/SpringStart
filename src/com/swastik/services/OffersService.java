@@ -30,4 +30,12 @@ public class OffersService {
 	public void throwTestException() {
 		offersDao.getOffer(99999);
 	}
+	
+	public Offer getOffer(int id){
+		return offersDao.getOffer(id);
+	}
+	
+	public Offer getOffer(String name){
+		return offersDao.getOffer(name);
+	}
 }

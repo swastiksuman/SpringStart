@@ -13,6 +13,7 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.swastik.dao.Offer;
 import com.swastik.services.OffersService;
@@ -31,7 +32,6 @@ public class OffersController {
 	@RequestMapping("/offers")
 	public String showOffers(Model model) {
 		
-		offersService.throwTestException();
 		List<Offer> offers = offersService.getCurrent();
 		
 		model.addAttribute("offers", offers);
@@ -66,6 +66,25 @@ public class OffersController {
 			System.out.println("Form Validated");
 		}
 		return "offercreated";
+	}
+	
+	@RequestMapping("/searchoffer")
+	public String searchOffer(Model model){
+		model.addAttribute("offer", new Offer());
+		return "searchpage";
+	}
+	
+	@RequestMapping(value="/searchpage", method=RequestMethod.POST)
+	public String searchResult(@RequestParam("name")String name, Model model){
+		Offer offerResult = offersService.getOffer(name);
+		if(offerResult!=null){
+			model.addAttribute("offerResult", offerResult);
+			return "searchresult";
+		}else{
+			System.out.println("ERRR");
+			return "error";
+		}
+		
 	}
 	
 }
