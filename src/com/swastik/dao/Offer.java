@@ -1,9 +1,24 @@
 package com.swastik.dao;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import com.swastik.validation.ValidEmail;
+
 public class Offer {
 	private int id;
+	
+	@Size(min=5, max=100, message="Name must be between 5 and 100 characters")
 	private String name;
+	
+	/*@NotNull
+	@Pattern(regexp=".*\\@.*\\..*", message="Not a valid email address")*/
+	
+	@ValidEmail
 	private String email;
+	
+	@Size(min=5, max=100)
 	private String text;
 	
 	public Offer() {

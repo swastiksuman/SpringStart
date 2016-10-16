@@ -5,11 +5,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Error</title>
 </head>
 <body>
-	<p><a href="/SpringStart/offers">Show Offer</a></p>
-	<p><a href="/SpringStart/createoffer">Add Offer</a></p>
-	<p><a href="/SpringStart/searchoffer">Search Offer</a></p>
+	<p>Error ho gaya</p>
 </body>
 </html>
