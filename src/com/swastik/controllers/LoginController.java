@@ -50,7 +50,7 @@ public class LoginController {
 			for (ObjectError error : errors) {
 				System.out.println(error.getDefaultMessage());
 			}
-			return "createaccount";
+			return "newaccount";
 		} else {
 			user.setAuthority("user");
 			user.setEnabled(true);

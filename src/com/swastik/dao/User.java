@@ -1,6 +1,13 @@
 package com.swastik.dao;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
+
 public class User {
+	
+	@NotBlank(message="Can't be blank.")
+	@Size(min=5, max=20, message="Between 5 to 20.")
 	private String username;
 	private String password;
 	private String email;

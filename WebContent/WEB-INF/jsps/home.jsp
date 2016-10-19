@@ -11,5 +11,6 @@
 	<p><a href="/SpringStart/offers">Show Offer</a></p>
 	<p><a href="/SpringStart/createoffer">Add Offer</a></p>
 	<p><a href="/SpringStart/searchoffer">Search Offer</a></p>
+	<p><a href="/SpringStart/login">Login</a>
 </body>
 </html>

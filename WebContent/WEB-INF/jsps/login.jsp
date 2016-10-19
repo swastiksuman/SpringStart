@@ -38,6 +38,8 @@
 			</tr>
 		</table>
 	</form>
+	<h1>Don't Have An Account?</h1>
+	<p><a href="/SpringStart/newaccount">Create Account</a>
 </body>
 </html>
 
