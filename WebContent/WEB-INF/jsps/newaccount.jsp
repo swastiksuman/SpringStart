@@ -25,5 +25,7 @@
 
 </sf:form>
 
+<button onclick="location.href='newaccount?edit=true'">Some</button>
+
 </body>
 </html>

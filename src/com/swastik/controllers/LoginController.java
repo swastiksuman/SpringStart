@@ -2,6 +2,9 @@ package com.swastik.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.swastik.dao.Offer;
 import com.swastik.dao.User;
@@ -32,7 +36,8 @@ public class LoginController {
 	}
 
 	@RequestMapping("/newaccount")
-	public String createAccount(Model model) {
+	public String createAccount(@RequestParam String edit, Model model) {
+		System.out.println(edit);
 		model.addAttribute("user", new User());
 		return "newaccount";
 	}
@@ -45,11 +50,13 @@ public class LoginController {
 	@RequestMapping(value = "/accountcreated", method = RequestMethod.POST)
 	public String doCreate(Model model, @Valid User user, BindingResult result) {
 		if (result.hasErrors()) {
+			
 			System.out.println("Form doesn't validate");
 			List<ObjectError> errors = result.getAllErrors();
 			for (ObjectError error : errors) {
 				System.out.println(error.getDefaultMessage());
 			}
+			
 			return "newaccount";
 		} else {
 			user.setAuthority("user");

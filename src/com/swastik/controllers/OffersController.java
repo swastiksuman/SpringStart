@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.swastik.dao.Offer;
 import com.swastik.services.OffersService;
@@ -44,6 +45,14 @@ public class OffersController {
 		model.addAttribute("offer", new Offer());
 		return "createoffer";
 	}
+	
+	
+	@RequestMapping(value="createajax", method=RequestMethod.GET)
+	public @ResponseBody String createOfferAjax(@RequestParam("email")String email) {
+		
+		return email;
+	}
+	
 	
 /*	@ExceptionHandler(DataAccessException.class)
 	public String handleDBException(DataAccessException exception){

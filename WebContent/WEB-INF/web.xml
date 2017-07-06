@@ -36,9 +36,9 @@
   <context-param>
   	<param-name>contextConfigLocation</param-name>
   	<param-value>
-  		classpath:com/swastik/config/dao-context.xml
-  		classpath:com/swastik/config/security-context.xml
-  		classpath:com/swastik/config/service-context.xml
+  		classpath:dao-context.xml
+  		classpath:security-context.xml
+  		classpath:service-context.xml
   	</param-value>	
   </context-param>
   <context-param>
