@@ -2,9 +2,8 @@
 <Context>
 	<!-- Specify a JDBC datasource -->
 	<Resource name="jdbc/spring" auth="Container"
-		type="javax.sql.DataSource" username="root" password="elnino"
+		type="javax.sql.DataSource" username="root" password="elnino#09"
 		driverClassName="com.mysql.jdbc.Driver"
-		url="jdbc:mysql://localhost:3306/employeedb"
+		url="jdbc:mysql://springdb.c4xmnwdxsikn.us-west-2.rds.amazonaws.com:3306/employeedb"
 		maxActive="10" maxIdle="4" />
-	
 </Context>

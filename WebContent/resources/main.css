@@ -1,15 +1,27 @@
 @CHARSET "ISO-8859-1";
 .formtable {
-	width: 400px;
+	width: 100%;
 	padding: 50px;
 	border: 1px solid blue;
-	background-color: aqua;
+	background-color: silver;
 }
 
-table.offers{
-	width: 400px;
+table{
+	width: 100%;
 	padding: 10px;
-	border: 1px solid blue;
+	border: 1px solid black;
+}
+
+td{
+	width: 20px;
+	padding: 10px;
+	border: 1px solid black;
+}
+
+tr{
+	width: 20px;
+	padding: 10px;
+	border: 1px solid black;
 }
 
 input[type=text] {
@@ -34,4 +46,8 @@ textarea {
 .error{
 	font-size: small;
 	color: red;
+}
+
+body{
+	background-color: silver;
 }

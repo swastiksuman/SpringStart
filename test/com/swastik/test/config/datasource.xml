@@ -9,16 +9,16 @@
 	</context:component-scan>
 
 	<beans profile="dev">
-	<context:property-placeholder
-		location="com/swastik/test/config/jdbc.properties" />
+		<context:property-placeholder
+			location="com/swastik/test/config/jdbc.properties" />
 
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-		destroy-method="close">
+		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+			destroy-method="close">
 
-		<property name="driverClassName" value="${jdbc.driver}"></property>
-		<property name="url" value="${jdbc.url}"></property>
-		<property name="password" value="${jdbc.password}"></property>
-		<property name="username" value="${jdbc.username}"></property>
-	</bean>
+			<property name="driverClassName" value="${jdbc.driver}"></property>
+			<property name="url" value="${jdbc.url}"></property>
+			<property name="password" value="${jdbc.password}"></property>
+			<property name="username" value="${jdbc.username}"></property>
+		</bean>
 	</beans>
 </beans>

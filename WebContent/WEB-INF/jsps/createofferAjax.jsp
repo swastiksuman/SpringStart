@@ -9,19 +9,24 @@
 	rel="stylesheet" type="text/css">
 <script
 	src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script>
-	$(document).ready(
+<script type="text/javascript">
+$(document).ready(
 			function() {
-				$('#check').click(
+				$('#sampleForm').submit(
 						function(event) {
 							var email = $('#email').val();
+							var name = $('#name').val();
+							var text - $('#text').val();
 							var data = 'email='
-									+ encodeURIComponent(email);
-							alert(email);
+									+ encodeURIComponent(email)
+									+ '&name='
+									+ encodeURIComponent(name)
+									+ '&text='
+									+ encodeURIComponent(text);
 							$.ajax({
-								url : $("#check").attr("onclick"),
+								url : $("#sampleForm").attr("action"),
 								data : data,
-								type : "GET",
+								type : "POST",
 
 								success : function(response) {
 									alert(response);
@@ -39,31 +44,25 @@
 </head>
 <body>
 
-
-	<form:form method="post"
-		action="${pageContext.request.contextPath}/docreate"
-		commandName="offer">
+	<form id="sampleForm" method="post" action="/SpringStart/createofferajax">
 		<table class="formtable">
 			<tr>
 				<td>Name:</td>
-				<td><form:input class="control" path="name" type="text"></form:input><br />
-					<form:errors path="name" cssClass="error"></form:errors></td>
+				<td><input id="name" class="control" type="text"></input><br />
 			</tr>
 			<tr>
 				<td>Email:</td>
-				<td><form:input id="email" class="control" path="email" type="text"></form:input></td>
-				<td><button type="button" id="check" onclick="${pageContext.request.contextPath}/createajax">Check</button></td>
+				<td><input id="email" class="control" type="text"></input></td>
 			</tr>
 			<tr>
 				<td>Your Offer:</td>
-				<td><form:textarea class="control" path="text" rows="10"
-						cols="50"></form:textarea></td>
+				<td><textarea id="text" class="control" rows="10" cols="50"></textarea></td>
 			</tr>
 			<tr>
 				<td></td>
-				<td><input class="control" value="Create Ad" type="submit"></td>
+				<td><button name="control" type="submit">Submit</button></td>
 			</tr>
 		</table>
-	</form:form>
+	</form>
 </body>
 </html>

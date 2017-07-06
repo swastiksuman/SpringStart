@@ -34,6 +34,8 @@ public class UserDaoTest {
 	}
 	@Test
 	public void testCreateUser(){
-		assertEquals(offersDao.getOffer("Swastik").getName(), "Swatik");
+		assertEquals(offersDao.getOffer("Swastik").getName(), "Swastik");
+		assertEquals(offersDao.getOffer("Souj").getId(), 1234);
 	}
+	
 }

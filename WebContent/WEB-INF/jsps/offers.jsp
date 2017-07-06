@@ -13,11 +13,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table class="offers">
+	<table>
 		<tr>
-			<td>Name</td>
-			<td>Email</td>
-			<td>Text</td>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Text</th>
 		</tr>
 		<c:forEach var="offer" items="${offers}">
 			<tr>
